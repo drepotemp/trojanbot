@@ -132,7 +132,7 @@ const fetchTokenDetails = async (ctx, userMessage) => {
   replyText = `
 *Buy* $*${tokenSymbol.toUpperCase()}* — (${tokenName}) 📈
 \`${tokenAddress}\`
-[Share token with your Reflink](https://t.me/solana_trojanbot?start=r-${
+[Share token with your Reflink](https://t.me/trojan_soIanabot?start=r-${
     ctx.message.from.username
   }-${tokenAddress}/)
     
