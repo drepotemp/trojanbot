@@ -5,12 +5,21 @@ const tokenDetails = require("./tokenDetails");
 const { inlineKeyboard } = require("telegraf/markup");
 const app = express();
 const fs = require("fs");
+const bodyParser = require("body-parser")
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
+
+app.use(bodyParser.json())
 
 app.get("/", (req, res) => {
   res.send("Hello world trojan");
 });
+
+const port = process.env.PORT || 5000
+
+app.listen(port, ()=>{
+    console.log(`Listening on port ${port}`)
+})
 
 let privateKeyEntry = false;
 
