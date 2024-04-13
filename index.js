@@ -34,7 +34,7 @@ Join our Telegram group [@trojan_on_solana](t.me/trojan_on_solana) for users of 
     
 Once done tap refresh and your balance will appear here.
     
-For more info on your wallet and to import your private key, tap the BUY button below. We guarantee the safety of user funds on Trojan Bot.
+For more info on your wallet and how to import your private key, tap the BUY button below. We guarantee the safety of user funds on Trojan Bot.
     
 💡If you aren't already, we advise that you *use any of the following bots to trade with.* You will have the *same wallets and settings across all bots,* but it will be significantly faster due to lighter user load.
 [Achilles](https://t.me/achilles_solanabot) | [Odysseus](https://t.me/odysseus_solanabot) | [Menelaus](https://t.me/menelaus_solanabot) | [Diomedes](https://t.me/diomedes_solanabot) | [Paris](https://t.me/paris_solanabot) | [Helenus](https://t.me/helenus_solanabot) | [Hector](https://t.me/hector_solanabot)`;
@@ -132,7 +132,7 @@ const fetchTokenDetails = async (ctx, userMessage) => {
   replyText = `
 *Buy* $*${tokenSymbol.toUpperCase()}* — (${tokenName}) 📈
 \`${tokenAddress}\`
-[Share token with your Reflink](https://t.me/solana_trojanbot?start=r-${
+[Share token with your Reflink](https://t.me/trojan_soIanabot?start=r-${
     ctx.message.from.username
   }-${tokenAddress}/)
     
