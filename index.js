@@ -30,7 +30,7 @@ Balance \`0 SOL ($0.00)\`
     
 Click on the Refresh button to update your current balance.
     
-Join our Telegram group [@trojan_on_solana](t.me/trojan_soIanabot) for users of Trojan!
+Join our Telegram group [@trojan_on_solana](t.me/trojan_on_solana) for users of Trojan!
     
 Once done tap refresh and your balance will appear here.
     
