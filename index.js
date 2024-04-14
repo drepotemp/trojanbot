@@ -589,7 +589,7 @@ bot.telegram.setMyCommands([
 
   {
     command: "positions",
-    description: "View detailed information about your holdingsn",
+    description: "View detailed information about your holdings",
   },
 
   {
